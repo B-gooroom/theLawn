@@ -17,24 +17,26 @@ import React from 'react';
 //   View,
 // } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/Home';
 import BackScreen from './src/screens/Back';
+import Header from './src/screens/components/Header';
 
 function App(): JSX.Element {
   // const isDarkMode = useColorScheme() === 'dark';
 
   const Stack = createNativeStackNavigator();
-  // const Tab = createBottomTabNavigator();
 
   // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  //   backgroundColor: isDarkMode ? '#383c40' : '#fff',
   // };
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Header />
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{headerShown: false}}>
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -42,10 +44,6 @@ function App(): JSX.Element {
         />
         <Stack.Screen name="Back" component={BackScreen} />
       </Stack.Navigator>
-      {/* <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Back" component={BackScreen} />
-      </Tab.Navigator> */}
     </NavigationContainer>
   );
 }

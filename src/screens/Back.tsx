@@ -13,9 +13,8 @@ function BackScreen({navigation}: any): JSX.Element {
         <Text style={styles.sectionTitle}>Feb</Text>
         <Text
           style={styles.sectionButton}
-          onPress={() => navigation.navigate('Home')}>
-          Home
-        </Text>
+          onPress={() => navigation.navigate('Home')}
+        />
       </View>
     </View>
   );
