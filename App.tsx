@@ -6,20 +6,10 @@
  */
 
 import React from 'react';
-// import type {PropsWithChildren} from 'react';
-// import {
-//   // SafeAreaView,
-//   // ScrollView,
-//   // StatusBar,
-//   // StyleSheet,
-//   // Text,
-//   useColorScheme,
-//   View,
-// } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/Home';
-import BackScreen from './src/screens/Back';
+import DiaryScreen from './src/screens/Diary';
 import Header from './src/screens/components/Header';
 
 function App(): JSX.Element {
@@ -41,8 +31,31 @@ function App(): JSX.Element {
           name="Home"
           component={HomeScreen}
           options={{title: 'Home'}}
+          // options={{
+          //   title: 'Home',
+          //   headerLeft: ({onPress}: any) => (
+          //     <TouchableOpacity onPress={onPress}>
+          //       <Text>Left</Text>
+          //     </TouchableOpacity>
+          //   ),
+          //   headerTitle: () => <View />,
+          //   // headerTitle: ({children}: any) => (
+          //   //   <View>
+          //   //     <Text>{children}</Text>
+          //   //   </View>
+          //   // ),
+          //   headerRight: () => (
+          //     <View>
+          //       <Text>Right</Text>
+          //     </View>
+          //   ),
+          // }}
         />
-        <Stack.Screen name="Back" component={BackScreen} />
+        <Stack.Screen
+          name="Diary"
+          component={DiaryScreen}
+          options={{title: 'Diary'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
