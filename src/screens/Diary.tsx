@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-function BackScreen({navigation}: any): JSX.Element {
+function DiaryScreen({navigation}: any): JSX.Element {
   // const backgroundStyle = {
   //   backgroundColor: isDarkMode ? '#383c40' : '#c9cdd2',
   // };
@@ -13,8 +13,9 @@ function BackScreen({navigation}: any): JSX.Element {
         <Text style={styles.sectionTitle}>Feb</Text>
         <Text
           style={styles.sectionButton}
-          onPress={() => navigation.navigate('Home')}
-        />
+          onPress={() => navigation.navigate('Home')}>
+          홈
+        </Text>
       </View>
     </View>
   );
@@ -39,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BackScreen;
+export default DiaryScreen;
