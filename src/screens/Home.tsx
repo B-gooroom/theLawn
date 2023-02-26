@@ -15,14 +15,15 @@ function HomeScreen({navigation}: any): JSX.Element {
   const diary = {
     src: require('../assets/img/create.jpg'),
   };
-  const [user, setUser] = useState<any>();
+  const [user, setUser] = useState<any>({});
   console.log('user', user);
 
   const getResponse = async () => {
     try {
       //응답 성공
-      const response = await axios.get('http://localhost:8000/api/test');
-      setUser(response.data[0]);
+      const response = await axios.get('http://localhost:8080/api/v1/users');
+      console.log('res/Home', response.data.users);
+      setUser(response.data.users[0]);
       // console.log(response.data[0]);
     } catch (error) {
       //응답 실패
@@ -32,8 +33,6 @@ function HomeScreen({navigation}: any): JSX.Element {
 
   useEffect(() => {
     getResponse();
-    // const response = axios.get('http://localhost:8000/api/test');
-    // console.log('res', response);
   }, []);
 
   return (
@@ -54,6 +53,7 @@ function HomeScreen({navigation}: any): JSX.Element {
             }}>
             Seoul 3℃
           </Text>
+          {/* <Text>{user.userName}</Text> */}
           <View style={{marginTop: 30}}>
             <Image source={weather.src} style={styles.weatherImg} />
           </View>

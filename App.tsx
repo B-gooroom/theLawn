@@ -8,9 +8,10 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Header from './src/screens/components/Header';
 import HomeScreen from './src/screens/Home';
 import DiaryScreen from './src/screens/Diary';
-import Header from './src/screens/components/Header';
+import LoginScreen from './src/screens/Login';
 
 function App(): JSX.Element {
   // const isDarkMode = useColorScheme() === 'dark';
@@ -55,6 +56,11 @@ function App(): JSX.Element {
           name="Diary"
           component={DiaryScreen}
           options={{title: 'Diary'}}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{title: 'Login'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
