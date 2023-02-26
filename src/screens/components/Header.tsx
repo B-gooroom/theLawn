@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingRight: 12,
   },
   symbol: {
-    width: 32,
+    width: 34,
     height: 30,
   },
   button: {
